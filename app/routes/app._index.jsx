@@ -95,7 +95,7 @@ export default function Index() {
         Generate a product
       </s-button>
 
-      <s-section heading="Congrats on creating a new Shopify app 🎉">
+      <s-section heading="Congrats on creating a new Shopify app. Now Get TO it! 🎉">
         <s-paragraph>
           This embedded app template uses{" "}
           <s-link
