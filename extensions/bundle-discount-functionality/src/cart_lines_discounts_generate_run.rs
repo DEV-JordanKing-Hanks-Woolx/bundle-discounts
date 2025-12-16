@@ -15,17 +15,14 @@ use crate::schema::ProductDiscountCandidateValue;
 use crate::schema::ProductDiscountSelectionStrategy;
 use crate::schema::ProductDiscountsAddOperation;
 
-
 use super::schema;
 use shopify_function::prelude::*;
 use shopify_function::Result;
-use super::schema::cart_lines_discounts_generate_run::Merchandise;
 
 #[shopify_function]
 fn cart_lines_discounts_generate_run(
     input: schema::cart_lines_discounts_generate_run::Input,
 ) -> Result<CartLinesDiscountsGenerateRunResult> {
-    println!("********** This is the App ***************");
     let max_cart_line = input
         .cart()
         .lines()
@@ -38,11 +35,6 @@ fn cart_lines_discounts_generate_run(
                 .unwrap_or(std::cmp::Ordering::Equal)
         })
         .ok_or("No cart lines found")?;
-
-    // Access the product ID from the merchandise
-    let merchandise = max_cart_line.merchandise();
-    let product_id = merchandise.product().id();
-    println!("Product ID: {}", product_id);
 
     let has_order_discount_class = input
         .discount()
