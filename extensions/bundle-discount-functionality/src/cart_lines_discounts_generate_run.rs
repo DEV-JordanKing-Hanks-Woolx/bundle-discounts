@@ -14,6 +14,8 @@ use crate::schema::ProductDiscountCandidateTarget;
 use crate::schema::ProductDiscountCandidateValue;
 use crate::schema::ProductDiscountSelectionStrategy;
 use crate::schema::ProductDiscountsAddOperation;
+use crate::schema::DeliverableCartLine;
+
 
 use super::schema;
 use shopify_function::prelude::*;
@@ -39,8 +41,8 @@ fn cart_lines_discounts_generate_run(
 
     // Access the product ID from the merchandise
     let merchandise = max_cart_line.merchandise();
-    if let schema::cart_lines_discounts_generate_run::Merchandise::ProductVariant(variant) = merchandise {
-        let product_id = variant.product().id();
+    if let schema::cart_lines_discounts_generate_run::DeliverableCartLine::ProductVariant(variant) = merchandise {
+        let product_id = variant.merchandise().id();
         println!("Product ID: {}", product_id);
     }
 
