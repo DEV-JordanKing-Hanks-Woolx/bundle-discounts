@@ -14,6 +14,7 @@ use crate::schema::ProductDiscountCandidateTarget;
 use crate::schema::ProductDiscountCandidateValue;
 use crate::schema::ProductDiscountSelectionStrategy;
 use crate::schema::ProductDiscountsAddOperation;
+use crate::schema::Merchandise;
 
 
 use super::schema;
