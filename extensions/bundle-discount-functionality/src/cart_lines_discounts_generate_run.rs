@@ -21,9 +21,9 @@ use shopify_function::Result;
 
 #[shopify_function]
 fn cart_lines_discounts_generate_run(
-    println!("********** This is the App ***************");
     input: schema::cart_lines_discounts_generate_run::Input,
 ) -> Result<CartLinesDiscountsGenerateRunResult> {
+    println!("********** This is the App ***************");
     let max_cart_line = input
         .cart()
         .lines()
