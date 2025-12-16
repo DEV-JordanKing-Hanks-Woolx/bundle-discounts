@@ -39,7 +39,7 @@ fn cart_lines_discounts_generate_run(
 
     // Access the product ID from the merchandise
     let merchandise = max_cart_line.merchandise();
-    if let schema::cart_lines_discounts_generate_run::merchandise::ProductVariant(variant) = merchandise {
+    if let schema::cart_lines_discounts_generate_run::Merchandise::ProductVariant(variant) = merchandise {
         let product_id = variant.product().id();
         println!("Product ID: {}", product_id);
     }
