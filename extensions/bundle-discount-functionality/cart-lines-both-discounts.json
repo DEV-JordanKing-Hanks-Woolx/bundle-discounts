@@ -6,17 +6,37 @@
       "cart": {
         "lines": [
           {
-            "id": "gid://shopify/CartLine/0",
+            "id": "gid://shopify/CartLine/1",
+            "quantity": 2,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/1"
+            },
             "cost": {
               "subtotalAmount": {
-                "amount": "6.0"
+                "amount": "50.0",
+                "currencyCode": "USD"
+              }
+            }
+          },
+          {
+            "id": "gid://shopify/CartLine/2",
+            "quantity": 1,
+            "merchandise": {
+              "__typename": "ProductVariant",
+              "id": "gid://shopify/ProductVariant/2"
+            },
+            "cost": {
+              "subtotalAmount": {
+                "amount": "75.0",
+                "currencyCode": "USD"
               }
             }
           }
         ]
       },
       "discount": {
-        "discountClasses": ["PRODUCT", "ORDER", "SHIPPING"]
+        "discountClasses": ["ORDER", "PRODUCT"]
       }
     },
     "inputBytes": 126,
