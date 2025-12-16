@@ -38,7 +38,7 @@ fn cart_lines_discounts_generate_run(
         .ok_or("No cart lines found")?;
 
     // Access the product ID from the merchandise
-    if let schema::cart_lines_discounts_generate_run::Merchandise::ProductVariant(variant) = merchandise {
+    if let schema::cart_lines_discounts_generate_run::merchandise::ProductVariant(variant) = merchandise {
         let product_id = variant.product().id();
         println!("Product ID: {}", product_id);
     }
