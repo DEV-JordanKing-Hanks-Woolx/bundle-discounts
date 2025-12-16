@@ -19,6 +19,7 @@ use crate::schema::ProductDiscountsAddOperation;
 use super::schema;
 use shopify_function::prelude::*;
 use shopify_function::Result;
+use super::schema::cart_lines_discounts_generate_run::Merchandise;
 
 #[shopify_function]
 fn cart_lines_discounts_generate_run(
@@ -40,8 +41,13 @@ fn cart_lines_discounts_generate_run(
 
     // Access the product ID from the merchandise
     let merchandise = max_cart_line.merchandise();
-    let product_id = merchandise.product().id();
-    println!("Product ID: {}", product_id);
+    if let Merchandise::ProductVariant(variant) = &merchandise {
+        let product_id = variant.product().id();
+        println!("Product ID: {}", product_id);
+    } else {
+        // Handle other variants if needed (e.g., CustomProduct)
+        println!("Merchandise is not a ProductVariant");
+    }
 
     let has_order_discount_class = input
         .discount()
