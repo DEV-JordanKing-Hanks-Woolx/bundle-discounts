@@ -1,0 +1,315 @@
+# ================================ Customizable Settings ================================
+# --- (0) Master toggles ---
+ENABLE_REBUY_FREE_GIFT = true  # <= set to false to disable ONLY the Rebuy free gift logic
+
+# --- (1) Grouped bundle discounts (A+B -> discount both sides) ---
+# Add as many campaigns as you like. For each campaign:
+# - Put ALL product IDs for Group A and Group B (every color) in the arrays.
+# - quantity_needed_a / quantity_needed_b can be 1 (typical) or any integer.
+# - discount_type: :percent or :dollar
+# - discount_amount: 25 (means 25%) or 15 (means $15)
+# - discount_message: line item message shown at checkout
+
+GROUPED_BUNDLE_DISCOUNTS = [
+  {
+    group_a_product_ids: [7328618152002, 7328089407554],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7328623067202, 7328621232194],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Hayden & Marley Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7456189710402, 7456189481026, 7393003733058, 7351741218882,7557712576578,7557715591234,7557719162946],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7455664144450, 7455662800962, 7455660146754, 7392838942786, 7362456485954, 7351415472194,7559003603010,7559005667394,7559006978114,7559016677442],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Mia & Ryann Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7097113935938,7519820218434,7519813632066,7378695585858,7314269012034,7519832440898,7519826804802,7378695979074,7314269306946],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7324565831746,7394177155138,7394177744962],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Sophia & Emerson Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7320236490818,7320259985474,7511312957506,7511295524930,7320254545986,7511291199554,7511314661442,7511290282050,7511313907778,7511293558850],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7523781509186,7524042014786,7524043554882],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Hannah & Willa Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7324430991426,7511385374786,7511379738690,7511381966914,7511384588354],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7351370645570,7518924308546,7518925291586,7518926635074,7518927028290],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Hadley & Luca Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7523660496962,7523663642690,7523662561346,7523663085634],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7320292819010,7518190927938,7518191157314,7320294064194,7518191353922,7518183030850,7518194237506,7324589981762,7518199808066,7518200594498,7518198857794,7320297799746,7518202626114,7518203576386],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Sadie & Stella Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7518957109314,7518960910402],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7333725438018,7519904268354,7519904923714,7519909412930],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Elsa & Frost Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7521897381954,7521906425922,7521912193090,7521912619074,7521914421314,7521916551234,7521918058562
+],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7521940242498,7521942241346,7521942569026,7521942962242,7521943388226,7521943584834,7521943879746
+],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Mini Explorer Top & Bottom Bundle Save 15%!",
+  },
+  
+   {
+    group_a_product_ids: [7554343338050,7349617885250,7554326265922,7554356871234],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7554407694402,7555579150402,7554395897922,7555576561730],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Avery & Parker Bundle Save 15%!",
+  },
+  
+   {
+    group_a_product_ids: [7555594584130,7555586523202,7555601662018],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7555712286786,7555684859970,7555707338818,7555713695810],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Bailey & Bree Bundle Save 15%!",
+  },
+  
+  {
+    group_a_product_ids: [7380366000194,7511401365570,7511403954242,7511404642370,7511405199426],
+    quantity_needed_a:   1,
+    group_b_product_ids: [7495154368578,7495161020482],
+    quantity_needed_b:   1,
+    discount_type:       :percent,
+    discount_amount:     15,
+    discount_message:    "Evie & Ellis Bundle Save 15%!",
+  },
+  
+  # Add more campaigns like this if needed...
+]
+
+# --- (2) Rebuy free gift settings (new values you sent) ---
+REBUY_FREE_GIFT_SETTINGS = {
+  threshold_subtotal:      200,                               # Spend threshold (store currency)
+  gift_variant_ids:        [42262348300354, 42262345384002],  # Accept ANY of these variant IDs
+  rebuy_attribution_key:   "_attribution",
+  rebuy_attribution_value: "Rebuy Tiered Progress Bar",
+  free_gift_message:       "Free Gift for spending 200 {{currency}}",
+}
+# =======================================================================================
+
+
+# ================================ Bundle Code (do not edit) ============================
+class GroupBundleSelector
+  def initialize(group_a_ids, qty_a_needed, group_b_ids, qty_b_needed)
+    @map = {
+      a: { ids: group_a_ids, qty_needed: qty_a_needed, items: [], total: 0 },
+      b: { ids: group_b_ids, qty_needed: qty_b_needed, items: [], total: 0 }
+    }
+  end
+
+  def build(cart)
+    cart.line_items.each do |li|
+      next if li.line_price_changed?
+      pid = li.variant.product.id
+
+      if @map[:a][:ids].include?(pid)
+        @map[:a][:items] << li
+        @map[:a][:total] += li.quantity
+      end
+      if @map[:b][:ids].include?(pid)
+        @map[:b][:items] << li
+        @map[:b][:total] += li.quantity
+      end
+    end
+    @map
+  end
+end
+
+class DiscountApplicator
+  def initialize(discount_type, discount_amount, discount_message)
+    @discount_type = discount_type
+    @discount_message = discount_message
+    @discount_amount = if discount_type == :percent
+      1 - (discount_amount * 0.01)
+    else
+      Money.new(cents: 100) * discount_amount
+    end
+  end
+
+  def apply(line_item)
+    new_line_price = if @discount_type == :percent
+      line_item.line_price * @discount_amount
+    else
+      [line_item.line_price - (@discount_amount * line_item.quantity), Money.zero].max
+    end
+    line_item.change_line_price(new_line_price, message: @discount_message)
+  end
+end
+
+class DiscountLoop
+  def initialize(discount_applicator)
+    @discount_applicator = discount_applicator
+  end
+
+  def loop_items(cart, line_items, num_to_discount)
+    line_items.each do |li|
+      break if num_to_discount <= 0
+
+      if li.quantity > num_to_discount
+        split_li = li.split(take: num_to_discount)
+        @discount_applicator.apply(split_li)
+        pos = cart.line_items.find_index(li)
+        cart.line_items.insert(pos + 1, split_li)
+        break
+      else
+        @discount_applicator.apply(li)
+        num_to_discount -= li.quantity
+      end
+    end
+  end
+end
+
+class GroupedBundleDiscountCampaign
+  def initialize(campaigns)
+    @campaigns = campaigns
+  end
+
+  def run(cart)
+    @campaigns.each do |c|
+      selector = GroupBundleSelector.new(
+        c[:group_a_product_ids], c[:quantity_needed_a],
+        c[:group_b_product_ids], c[:quantity_needed_b]
+      )
+      groups = selector.build(cart)
+
+      next if groups[:a][:total] < groups[:a][:qty_needed]
+      next if groups[:b][:total] < groups[:b][:qty_needed]
+
+      num_pairs = [
+        (groups[:a][:total] / groups[:a][:qty_needed]),
+        (groups[:b][:total] / groups[:b][:qty_needed])
+      ].min.floor
+      next if num_pairs <= 0
+
+      applicator = DiscountApplicator.new(c[:discount_type], c[:discount_amount], c[:discount_message])
+      looper = DiscountLoop.new(applicator)
+
+      looper.loop_items(cart, groups[:a][:items], groups[:a][:qty_needed] * num_pairs)
+      looper.loop_items(cart, groups[:b][:items], groups[:b][:qty_needed] * num_pairs)
+    end
+  end
+end
+# =======================================================================================
+
+
+# ================================ Rebuy Free Gift Code (do not edit) ===================
+class PercentageDiscount
+  def initialize(percent, message)
+    @discount = (100 - percent) / 100.0
+    @message = message
+  end
+  def apply(line_item)
+    line_item.change_line_price(line_item.line_price * @discount, message: @message)
+  end
+end
+
+class LineItemPropertiesSelector
+  def initialize(target_properties)
+    @target_properties = target_properties
+  end
+  def match?(line_item)
+    props = line_item.properties
+    @target_properties.all? do |k, v|
+      next unless props.has_key?(k)
+      props[k].to_s.downcase == v.downcase
+    end
+  end
+end
+
+class VariantIdSelector
+  def initialize(match_type, variant_ids)
+    @invert = match_type == :not_one
+    @variant_ids = variant_ids.map { |id| id.to_i }
+  end
+  def match?(line_item)
+    @invert ^ @variant_ids.include?(line_item.variant.id)
+  end
+end
+
+def apply_rebuy_free_gift(cart, settings)
+  # Use subtotal AFTER bundle discounts (bundles run before we get here)
+  threshold_money = Money.new(cents: settings[:threshold_subtotal].to_i * 100)
+  return unless cart.subtotal_price >= threshold_money
+
+  gift_selector = lambda do |item|
+    LineItemPropertiesSelector.new(
+      { settings[:rebuy_attribution_key] => settings[:rebuy_attribution_value] }
+    ).match?(item) &&
+    VariantIdSelector.new(:is_one, settings[:gift_variant_ids]).match?(item)
+  end
+
+  gifts = cart.line_items.select { |li| gift_selector.call(li) }
+  return if gifts.empty?
+
+  disc = PercentageDiscount.new(
+    100,
+    settings[:free_gift_message].gsub("{{currency}}", Input.cart.presentment_currency)
+  )
+
+  gifts.each do |li|
+    next if li.line_price_changed? # guard against double-discount
+    disc.apply(li)
+  end
+end
+# =======================================================================================
+
+
+# ================================ Run both campaigns ===================================
+CAMPAIGNS = [GroupedBundleDiscountCampaign.new(GROUPED_BUNDLE_DISCOUNTS)]
+CAMPAIGNS.each { |c| c.run(Input.cart) }          # Bundles first
+
+# Toggle-able Rebuy free gift application
+if ENABLE_REBUY_FREE_GIFT
+  apply_rebuy_free_gift(Input.cart, REBUY_FREE_GIFT_SETTINGS)  # Then free gift
+end
+
+Output.cart = Input.cart
