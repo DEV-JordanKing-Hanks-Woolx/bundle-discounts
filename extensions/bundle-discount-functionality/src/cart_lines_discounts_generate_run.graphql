@@ -8,7 +8,6 @@ query Input {
         }
       }
       merchandise {
-        __typename
         ... on ProductVariant {
           id
           product {
