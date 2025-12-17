@@ -75,7 +75,7 @@ fn cart_lines_discounts_generate_run(
 
     // Check if the discount has the PRODUCT class
     if has_product_discount_class {
-        println!("Ello!"),
+        println!("Ello!");
         operations.push(CartOperation::ProductDiscountsAdd(
             ProductDiscountsAddOperation {
                 selection_strategy: ProductDiscountSelectionStrategy::First,
