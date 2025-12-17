@@ -28,7 +28,7 @@
     "output": {
       "operations": [
         {
-          "orderDiscountsAdd": {
+          "productDiscountsAdd": {
             "candidates": [
               {
                 "associatedDiscountCode": null,
