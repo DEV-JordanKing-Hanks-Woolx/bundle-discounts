@@ -8,7 +8,7 @@ pub mod schema {
     pub mod cart_lines_discounts_generate_run {}
 }
 
-fn main() -> Result<()> {
-    log!("Function modules loaded");
-    Ok(())
+fn main() {
+    log!("Please invoke a named export.");
+    process::abort();
 }
