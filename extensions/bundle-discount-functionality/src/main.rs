@@ -13,7 +13,7 @@ pub mod schema {
     pub mod cart_delivery_options_discounts_generate_run {}
 }
 
-/*fn main() {
+fn main() {
     log!("Please invoke a named export.");
     process::abort();
-}*/
+}
