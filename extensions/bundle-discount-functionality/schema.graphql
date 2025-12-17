@@ -5299,7 +5299,7 @@ The resulting prices for variants when they're purchased with a specific selling
 type SellingPlanAllocationPriceAdjustment {
   """
   The effective price for a single delivery. For example, for a prepaid
-  subscription plan that includes 6 deliveries at the price of $48.00, the per
+  subscription plan that includes 6 deliveries at the price of $48.00, the per 
   delivery price is $8.00.
   """
   perDeliveryPrice: MoneyV2!
