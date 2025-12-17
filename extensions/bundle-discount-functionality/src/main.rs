@@ -7,7 +7,7 @@ pub mod schema {
     pub mod cart_lines_discounts_generate_run {}
 }
 
-fn main() -> Result<()> {
+fn main() -> Result<(), impl std::error::Error> {
     log!("Function modules loaded");
     Ok(())
 }
