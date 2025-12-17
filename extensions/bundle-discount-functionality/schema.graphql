@@ -4657,7 +4657,7 @@ A custom product represents a product that doesn't map to Shopify's
 For example, you can use a custom product to manage gift cards, shipping requirements, localized product
 information, or weight measurements and conversions.
 """
-union Merchandise = CustomProduct | ProductVariant
+union Merchandise = ProductVariant
 
 """
 [Custom fields](https://shopify.dev/docs/apps/build/custom-data) that store additional information
