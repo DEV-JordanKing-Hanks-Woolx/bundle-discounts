@@ -2,7 +2,6 @@ use crate::schema::CartLineTarget;
 use crate::schema::CartLinesDiscountsGenerateRunResult;
 use crate::schema::CartOperation;
 use crate::schema::DiscountClass;
-use crate::schema::OrderSubtotalTarget;
 use crate::schema::Percentage;
 use crate::schema::ProductDiscountCandidate;
 use crate::schema::ProductDiscountCandidateTarget;
