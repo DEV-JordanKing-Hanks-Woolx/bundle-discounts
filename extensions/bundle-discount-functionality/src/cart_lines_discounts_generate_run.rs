@@ -2,7 +2,6 @@ use crate::schema::CartLineTarget;
 use crate::schema::CartLinesDiscountsGenerateRunResult;
 use crate::schema::CartOperation;
 use crate::schema::DiscountClass;
-use crate::schema::OrderDiscountCandidate;
 use crate::schema::OrderDiscountCandidateTarget;
 use crate::schema::OrderDiscountCandidateValue;
 use crate::schema::OrderDiscountSelectionStrategy;
