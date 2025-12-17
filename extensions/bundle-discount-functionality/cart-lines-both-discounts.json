@@ -1,81 +1,25 @@
 {
-  "payload": {
-    "export": "cart_lines_discounts_generate_run",
-    "input": {
-      "cart": {
-        "lines": [
-          {
-            "cost": {
-              "subtotalAmount": {
-                "amount": "6.0"
-              }
-            },
-            "id": "gid://shopify/CartLine/0",
-            "merchandise": {
-              "id": "gid://shopify/ProductVariant/1",
-              "product": {
-                "id": "gid://shopify/Product/1"
-              }
-            }
-          }
-        ]
-      },
-      "discount": {
-        "discountClasses": ["PRODUCT", "ORDER", "SHIPPING"]
-      }
-    },
-    "inputBytes": 126,
-    "output": {
-      "operations": [
-        {
-          "productDiscountsAdd": {
-            "candidates": [
-              {
-                "associatedDiscountCode": null,
-                "conditions": null,
-                "message": "10% OFF ORDER",
-                "targets": [
-                  {
-                    "orderSubtotal": {
-                      "excludedCartLineIds": []
-                    }
-                  }
-                ],
-                "value": {
-                  "percentage": {
-                    "value": "10.0"
-                  }
-                }
-              }
-            ],
-            "selectionStrategy": "FIRST"
+  "cart": {
+    "lines": [
+      {
+        "cost": {
+          "subtotalAmount": {
+            "amount": "6.0"
           }
         },
-        {
-          "productDiscountsAdd": {
-            "candidates": [
-              {
-                "associatedDiscountCode": null,
-                "message": "20% OFF PRODUCT",
-                "targets": [
-                  {
-                    "cartLine": {
-                      "id": "gid://shopify/CartLine/0",
-                      "quantity": null
-                    }
-                  }
-                ],
-                "value": {
-                  "percentage": {
-                    "value": "20.0"
-                  }
-                }
-              }
-            ],
-            "selectionStrategy": "FIRST"
+        "id": "gid://shopify/CartLine/0",
+        "merchandise": {
+          "id": "gid://shopify/ProductVariant/1",
+          "product": {
+            "id": "gid://shopify/Product/1"
           }
         }
-      ]
-    }
+      }
+    ]
+  },
+  "discount": {
+    "discountClasses": [
+      "PRODUCT"
+    ]
   }
 }
