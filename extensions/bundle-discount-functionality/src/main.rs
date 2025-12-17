@@ -1,6 +1,5 @@
 use shopify_function::prelude::*;
 
-pub mod cart_delivery_options_discounts_generate_run;
 pub mod cart_lines_discounts_generate_run;
 
 #[typegen("schema.graphql")]
