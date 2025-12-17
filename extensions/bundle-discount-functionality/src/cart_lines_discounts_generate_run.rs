@@ -52,7 +52,7 @@ fn cart_lines_discounts_generate_run(
                         id: max_cart_line.id().clone(),
                         quantity: None,
                     })],
-                    message: Some("20% OFF PRODUCT".to_string()),
+                    message: Some("20% OFFs PRODUCT".to_string()),
                     value: ProductDiscountCandidateValue::Percentage(Percentage {
                         value: Decimal(20.0),
                     }),
