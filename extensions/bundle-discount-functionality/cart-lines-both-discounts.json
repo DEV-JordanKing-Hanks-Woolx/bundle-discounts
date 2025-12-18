@@ -16,10 +16,5 @@
         }
       }
     ]
-  },
-  "discount": {
-    "discountClasses": [
-      "PRODUCT"
-    ]
   }
 }
