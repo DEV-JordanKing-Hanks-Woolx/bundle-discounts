@@ -51,28 +51,6 @@ fn cart_lines_discounts_generate_run(
 
     let mut operations = vec![];
 
-    // Check if the discount has the ORDER class
-    if has_order_discount_class {
-        operations.push(CartOperation::OrderDiscountsAdd(
-            OrderDiscountsAddOperation {
-                selection_strategy: OrderDiscountSelectionStrategy::First,
-                candidates: vec![OrderDiscountCandidate {
-                    targets: vec![OrderDiscountCandidateTarget::OrderSubtotal(
-                        OrderSubtotalTarget {
-                            excluded_cart_line_ids: vec![],
-                        },
-                    )],
-                    message: Some("10% OFF ORDER".to_string()),
-                    value: OrderDiscountCandidateValue::Percentage(Percentage {
-                        value: Decimal(10.0),
-                    }),
-                    conditions: None,
-                    associated_discount_code: None,
-                }],
-            },
-        ));
-    }
-
     // Check if the discount has the PRODUCT class
     if has_product_discount_class {
         operations.push(CartOperation::ProductDiscountsAdd(
