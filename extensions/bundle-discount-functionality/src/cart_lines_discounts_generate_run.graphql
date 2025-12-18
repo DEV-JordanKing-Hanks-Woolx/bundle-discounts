@@ -18,7 +18,4 @@ query Input {
       }
     }
   }
-  discount {
-    discountClasses
-  }
 }

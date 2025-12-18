@@ -29,24 +29,29 @@ fn cart_lines_discounts_generate_run(
                 .unwrap_or(std::cmp::Ordering::Equal)
         })
         .ok_or("No cart lines found")?;
+    
+    let desired_product_id = "gid://shopify/Product/1"; // Replace with your target ID
+    let has_desired_product = input
+        .cart()
+        .lines()
+        .iter()
+        .any(|line| {
+            // Match on the Merchandise union
+            match line.merchandise() {
+                Merchandise::ProductVariant(variant) => variant.id() == desired_product_id,
+                // Handle other variants if the union expands (e.g., custom products)
+                _ => false,
+            }
+        });
 
-    let has_order_discount_class = input
-        .discount()
-        .discount_classes()
-        .contains(&DiscountClass::Order);
-    let has_product_discount_class = input
-        .discount()
-        .discount_classes()
-        .contains(&DiscountClass::Product);
-
-    if !has_order_discount_class && !has_product_discount_class {
+    if !has_desired_product {
         return Ok(CartLinesDiscountsGenerateRunResult { operations: vec![] });
     }
 
     let mut operations = vec![];
 
     // Check if the discount has the PRODUCT class
-    if has_product_discount_class {
+    if has_desired_product {
         operations.push(CartOperation::ProductDiscountsAdd(
             ProductDiscountsAddOperation {
                 selection_strategy: ProductDiscountSelectionStrategy::First,
