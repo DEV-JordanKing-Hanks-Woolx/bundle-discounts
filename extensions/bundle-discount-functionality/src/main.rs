@@ -12,7 +12,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-// Newer code below
+/*  Newer code below
 
 use std::collections::HashMap;
 
@@ -451,4 +451,4 @@ fn main() {
             item.discount_message.as_ref().unwrap_or(&"No discount".to_string())
         );
     }
-}
+}*/
