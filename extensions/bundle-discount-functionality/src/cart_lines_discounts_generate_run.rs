@@ -48,6 +48,7 @@ fn cart_lines_discounts_generate_run(
                     return true;
                 }
             }
+            false
         });
 
     if !has_desired_product {
