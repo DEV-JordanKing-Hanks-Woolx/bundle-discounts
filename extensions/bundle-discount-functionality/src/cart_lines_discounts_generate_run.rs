@@ -79,6 +79,15 @@ fn cart_lines_discounts_generate_run(
     Ok(CartLinesDiscountsGenerateRunResult { operations })
 }
 
+struct BundleDiscountCampaign {
+    group_a_product_ids: Vec<i64>,
+    quantity_needed_a: i32,
+    group_b_product_ids: Vec<i64>,
+    quantity_needed_b: i32,
+    discount_type: DiscountType,
+    discount_amount: f64,
+    discount_message: String,
+}
 
 fn get_grouped_bundle_discounts() -> Vec<BundleDiscountCampaign> {
     vec![
