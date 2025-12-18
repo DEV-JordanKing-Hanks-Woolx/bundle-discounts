@@ -79,6 +79,11 @@ fn cart_lines_discounts_generate_run(
     Ok(CartLinesDiscountsGenerateRunResult { operations })
 }
 
+enum DiscountType {
+    Percent,
+    Dollar,
+}
+
 struct BundleDiscountCampaign {
     group_a_product_ids: Vec<i64>,
     quantity_needed_a: i32,
