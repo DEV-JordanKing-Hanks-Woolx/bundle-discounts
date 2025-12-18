@@ -37,7 +37,7 @@ fn cart_lines_discounts_generate_run(
         .any(|line| {
             // Match on the Merchandise union
             match line.merchandise() {
-                Merchandise::ProductVariant(variant) => variant.id() == desired_product_id,
+                Merchandise::ProductVariant(variant) => variant.product().id() == desired_product_id,
                 // Handle other variants if the union expands (e.g., custom products)
                 _ => false,
             }
