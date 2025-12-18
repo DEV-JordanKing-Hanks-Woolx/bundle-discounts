@@ -1,7 +1,11 @@
+mod cart_lines_discounts_generate_run;
+
+use std::collections::HashMap;
+
 fn main() {
-    let mut cart = Cart {
+    let mut cart = cart_lines_discounts_generate_run::Cart {
         line_items: vec![
-            LineItem {
+            cart_lines_discounts_generate_run::LineItem {
                 id: 1,
                 variant_id: 123,
                 product_id: 7328618152002,
@@ -11,7 +15,7 @@ fn main() {
                 properties: HashMap::new(),
                 discount_message: None,
             },
-            LineItem {
+            cart_lines_discounts_generate_run::LineItem {
                 id: 2,
                 variant_id: 456,
                 product_id: 7328623067202,
@@ -29,7 +33,7 @@ fn main() {
     println!("Before processing:");
     println!("Subtotal: ${}.{:02}", cart.subtotal_price / 100, cart.subtotal_price % 100);
 
-    process_cart(&mut cart);
+    cart_lines_discounts_generate_run::process_cart(&mut cart);
 
     println!("\nAfter processing:");
     println!("Subtotal: ${}.{:02}", cart.subtotal_price / 100, cart.subtotal_price % 100);
