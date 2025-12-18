@@ -8,7 +8,7 @@ use crate::schema::ProductDiscountCandidateTarget;
 use crate::schema::ProductDiscountCandidateValue;
 use crate::schema::ProductDiscountSelectionStrategy;
 use crate::schema::ProductDiscountsAddOperation;
-
+use crate::schema::cart_lines_discounts_generate_run::input::cart::lines::Merchandise;  
 use super::schema;
 use shopify_function::prelude::*;
 use shopify_function::Result;
