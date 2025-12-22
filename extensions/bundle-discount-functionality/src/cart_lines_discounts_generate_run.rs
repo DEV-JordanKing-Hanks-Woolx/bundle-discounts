@@ -82,8 +82,7 @@ fn cart_lines_discounts_generate_run(
             .group_a_product_ids
             .iter()
             .map(|id| id.to_string())
-            .collect::<Vec<String>>()
-            .join(", ");
+            .collect::<Vec<String>>();
         
         operations.push(CartOperation::ProductDiscountsAdd( 
             ProductDiscountsAddOperation {
@@ -93,7 +92,7 @@ fn cart_lines_discounts_generate_run(
                         id: max_cart_line.id().clone(),
                         quantity: None,
                     })],
-                    message: Some(format!("Group A IDs: {}", first_campaign_ids)),
+                    message: Some(format!("Group A IDs: {}", first_campaign_ids[0])),
                     value: ProductDiscountCandidateValue::Percentage(Percentage {
                         value: Decimal(20.0),
                     }),
