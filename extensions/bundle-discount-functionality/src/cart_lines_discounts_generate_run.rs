@@ -77,6 +77,14 @@ fn cart_lines_discounts_generate_run(
             },
         ));
     }else{
+        // Get the first campaign's group_a_product_ids and format them
+        let first_campaign_ids = campaigns[0]
+            .group_a_product_ids
+            .iter()
+            .map(|id| id.to_string())
+            .collect::<Vec<String>>()
+            .join(", ");
+        
         operations.push(CartOperation::ProductDiscountsAdd( 
             ProductDiscountsAddOperation {
                 selection_strategy: ProductDiscountSelectionStrategy::First,
@@ -85,7 +93,7 @@ fn cart_lines_discounts_generate_run(
                         id: max_cart_line.id().clone(),
                         quantity: None,
                     })],
-                    message: Some(campaign.group_a_product_ids.iter().to_string()),
+                    message: Some(format!("Group A IDs: {}", first_campaign_ids)),
                     value: ProductDiscountCandidateValue::Percentage(Percentage {
                         value: Decimal(20.0),
                     }),
