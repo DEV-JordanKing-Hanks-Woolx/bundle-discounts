@@ -39,7 +39,7 @@ fn cart_lines_discounts_generate_run(
         .iter()
         .any(|line| {
             for campaign in &campaigns {
-                console.log!("Checking campaign with Group A products: {:?}", campaign.group_a_product_ids);
+                console.log!("Checking campaign with Group A products:");
                 let product_id = match line.merchandise() {
                     Merchandise::ProductVariant(variant) => variant.product().id(),
                     _ => continue,
