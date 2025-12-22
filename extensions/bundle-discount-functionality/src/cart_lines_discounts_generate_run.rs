@@ -85,7 +85,7 @@ fn cart_lines_discounts_generate_run(
                         id: max_cart_line.id().clone(),
                         quantity: None,
                     })],
-                    message: Some("IT'S OVER 9000!!!!!!!!!! % OFF PRODUCT".to_string()),
+                    message: Some(campaign.group_a_product_ids.iter().to_string()),
                     value: ProductDiscountCandidateValue::Percentage(Percentage {
                         value: Decimal(20.0),
                     }),
