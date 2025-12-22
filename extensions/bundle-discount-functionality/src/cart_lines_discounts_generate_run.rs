@@ -51,9 +51,9 @@ fn cart_lines_discounts_generate_run(
             false
         });
 
-    if !has_desired_product {
+    /*if !has_desired_product {
         return Ok(CartLinesDiscountsGenerateRunResult { operations: vec![] });
-    }
+    }*/
 
     let mut operations = vec![];
 
@@ -76,7 +76,7 @@ fn cart_lines_discounts_generate_run(
             },
         ));
     }else{
-        operations.push(CartOperation::ProductDiscountsAdd(
+        operations.push(CartOperation::ProductDiscountsAdd( 
             ProductDiscountsAddOperation {
                 selection_strategy: ProductDiscountSelectionStrategy::First,
                 candidates: vec![ProductDiscountCandidate {
