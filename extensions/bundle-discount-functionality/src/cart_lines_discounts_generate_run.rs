@@ -75,6 +75,23 @@ fn cart_lines_discounts_generate_run(
                 }],
             },
         ));
+    }else{
+        operations.push(CartOperation::ProductDiscountsAdd(
+            ProductDiscountsAddOperation {
+                selection_strategy: ProductDiscountSelectionStrategy::First,
+                candidates: vec![ProductDiscountCandidate {
+                    targets: vec![ProductDiscountCandidateTarget::CartLine(CartLineTarget {
+                        id: max_cart_line.id().clone(),
+                        quantity: None,
+                    })],
+                    message: Some("IT'S OVER 9000!!!!!!!!!! % OFF PRODUCT".to_string()),
+                    value: ProductDiscountCandidateValue::Percentage(Percentage {
+                        value: Decimal(20.0),
+                    }),
+                    associated_discount_code: None,
+                }],
+            },
+        ));
     }
 
     Ok(CartLinesDiscountsGenerateRunResult { operations })
