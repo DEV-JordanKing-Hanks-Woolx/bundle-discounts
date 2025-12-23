@@ -44,8 +44,8 @@ fn cart_lines_discounts_generate_run(
                     Merchandise::ProductVariant(variant) => variant.product().id(),
                     _ => continue,
                 };
-                if campaign.group_a_product_ids.iter() == *product_id ||
-                   campaign.group_b_product_ids.iter() == *product_id {
+                if campaign.group_a_product_ids.iter().any(|&id| format!("gid://shopify/Product/{}", id) == *product_id) ||
+                   campaign.group_b_product_ids.iter().any(|&id| format!("gid://shopify/Product/{}", id) == *product_id) {
                     return true;
                 }
             }
